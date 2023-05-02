@@ -20,6 +20,7 @@
     ></script>
 
     <script>
+    
       // pending => when code is processing status is pending
       // fulfilled/resolved => when code return value successfully
       // rejected => when code return error
@@ -34,10 +35,17 @@
       //     .then(getStatus)
       //     .catch(displayError);
 
+
       let calculationPromise = new Promise(function (resolve, reject) {
         setTimeout(function () {
           console.log(1 + 1);
-        }, 3000);
+        }, 1000);
+      });
+
+      let calculationPromise2 = new Promise(function (resolve, reject) {
+        setTimeout(function () {
+          console.log(1 + 2);
+        }, 500);
       });
 
       function addTwo(value) {
@@ -48,9 +56,9 @@
         console.log("The final value is ", value);
       }
 
-      calculationPromise
-        .then(addTwo)
-        .then(printFinalValue );
+      calculationPromise.then(addTwo).then(addTwo).then(printFinalValue);
+
+      calculationPromise2.then(addTwo).then(addTwo).then(printFinalValue);
     </script>
   </body>
 </html>
