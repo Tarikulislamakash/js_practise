@@ -18,5 +18,39 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      // pending => when code is processing status is pending
+      // fulfilled/resolved => when code return value successfully
+      // rejected => when code return error
+
+      // getJson("profile.json").then(renderProfile, displayError);
+
+      // getJson("profile.json").then(renderProfile).catch(displayError);
+
+      //   getJson("profile.json")
+      //     .then(renderProfile)
+      //     .then(getFriends)
+      //     .then(getStatus)
+      //     .catch(displayError);
+
+      let calculationPromise = new Promise(function (resolve, reject) {
+        setTimeout(function () {
+          console.log(1 + 1);
+        }, 3000);
+      });
+
+      function addTwo(value) {
+        return value + 2;
+      }
+
+      function printFinalValue(value) {
+        console.log("The final value is ", value);
+      }
+
+      calculationPromise
+        .then(addTwo)
+        .then(printFinalValue );
+    </script>
   </body>
 </html>
