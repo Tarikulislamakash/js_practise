@@ -20,7 +20,7 @@ let p1 = new Person('John');
 
 console.log(Person);
 console.log(Person.prototype);
-console.log(Person.prototype.constructor);
+// console.log(Person.prototype.constructor);
 
 p1.constructor.prototype
 
